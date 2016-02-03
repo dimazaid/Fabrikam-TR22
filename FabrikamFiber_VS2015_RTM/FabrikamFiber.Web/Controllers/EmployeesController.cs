@@ -38,15 +38,16 @@ namespace FabrikamFiber.Web.Controllers
         [HttpPost]
         public ActionResult Create(Employee employee)
         {
+            var client = new HttpClient();
+            client.GetAsync("www.dcsdcds.dcs");
+            logger.Trace("Request made");
             if (ModelState.IsValid)
             {
                 this.employeeRepository.InsertOrUpdate(employee);
                 this.employeeRepository.Save();
                 return RedirectToAction("Index");
             }
-            var client = new HttpClient();
-            client.GetAsync("www.dcsdcds.dcs");
-            logger.Trace("Request made");
+          
 
             return this.View();
         }
