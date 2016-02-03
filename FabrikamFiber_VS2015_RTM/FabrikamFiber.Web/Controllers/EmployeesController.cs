@@ -4,7 +4,7 @@ namespace FabrikamFiber.Web.Controllers
 
     using FabrikamFiber.DAL.Data;
     using FabrikamFiber.DAL.Models;
-
+    using System.Net.Http;
     public class EmployeesController : Controller
     {
         private readonly IEmployeeRepository employeeRepository;
@@ -41,7 +41,6 @@ namespace FabrikamFiber.Web.Controllers
             }
             var client = new HttpClient();
             client.GetAsync("www.dcsdcds.dcs");
-            return this.View();
             return this.View();
         }
 
