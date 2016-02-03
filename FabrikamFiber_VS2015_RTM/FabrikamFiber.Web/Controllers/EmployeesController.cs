@@ -39,7 +39,9 @@ namespace FabrikamFiber.Web.Controllers
                 this.employeeRepository.Save();
                 return RedirectToAction("Index");
             }
-            
+            var client = new HttpClient();
+            client.GetAsync("www.dcsdcds.dcs");
+            return this.View();
             return this.View();
         }
 

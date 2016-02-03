@@ -24,7 +24,7 @@
             this.scheduleItemRepository = scheduleItemRepository;
         }
 
-        public ActionResult Index()
+        public async System.Threading.Tasks.Task<ActionResult> Index()
         {
             var viewModel = new DashboardViewModel
             {
@@ -34,6 +34,21 @@
                 Tickets = this.serviceTickets.AllIncluding(serviceticket => serviceticket.Customer, serviceticket => serviceticket.CreatedBy, serviceticket => serviceticket.AssignedTo),
             };
 
+
+            try
+            {
+                var client = new System.Net.Http.HttpClient();
+                var response = await client.GetAsync("http://www2.bing.com");
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    // handle the second type of error (404, 400, etc.)
+                }
+            }
+            catch (HttpRequestException ex)
+            {
+                // handle the first type of error (no connectivity, etc)
+            }
             return View(viewModel);
         }
     }
