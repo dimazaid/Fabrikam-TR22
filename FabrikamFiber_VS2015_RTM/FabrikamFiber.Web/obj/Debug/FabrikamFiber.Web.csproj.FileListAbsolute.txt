@@ -64,3 +64,5 @@ C:\Users\dimazaid\Source\Repos\Fabrikam-TR22\FabrikamFiber_VS2015_RTM\FabrikamFi
 C:\Users\dimazaid\Source\Repos\Fabrikam-TR22\FabrikamFiber_VS2015_RTM\FabrikamFiber.Web\obj\Debug\FabrikamFiber.Web.csprojResolveAssemblyReference.cache
 C:\Users\dimazaid\Source\Repos\Fabrikam-TR22\FabrikamFiber_VS2015_RTM\FabrikamFiber.Web\obj\Debug\FabrikamFiber.Web.dll
 C:\Users\dimazaid\Source\Repos\Fabrikam-TR22\FabrikamFiber_VS2015_RTM\FabrikamFiber.Web\obj\Debug\FabrikamFiber.Web.pdb
+C:\Users\dimazaid\Source\Repos\Fabrikam-TR22\FabrikamFiber_VS2015_RTM\FabrikamFiber.Web\bin\NLog.dll
+C:\Users\dimazaid\Source\Repos\Fabrikam-TR22\FabrikamFiber_VS2015_RTM\FabrikamFiber.Web\bin\NLog.xml

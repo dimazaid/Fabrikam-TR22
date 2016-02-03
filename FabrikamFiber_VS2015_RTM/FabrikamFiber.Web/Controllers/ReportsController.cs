@@ -4,9 +4,11 @@
     using System.Web.Mvc;
     using FabrikamFiber.DAL.Data;
     using FabrikamFiber.Web.ViewModels;
-
+    using NLog;
     public class ReportsController : Controller
     {
+        Logger logger = LogManager.GetLogger("FabrikamLogger");
+
         private readonly IEmployeeRepository employeeRepository;
         private readonly IServiceTicketRepository serviceTicketRepository;
 
@@ -42,7 +44,7 @@
                 serviceticket => serviceticket.Customer,
                 serviceticket => serviceticket.CreatedBy,
                 serviceticket => serviceticket.AssignedTo);
-
+            logger.Trace("Tickets");
             return View();
         }
     }

@@ -1,4 +1,6 @@
-﻿namespace FabrikamFiber.Web.Controllers
+﻿using NLog;
+
+namespace FabrikamFiber.Web.Controllers
 {
     using System.Web.Mvc;
 
@@ -11,6 +13,7 @@
         private readonly IMessageRepository messageRepository;
         private readonly IAlertRepository alertRepository;
         private readonly IScheduleItemRepository scheduleItemRepository;
+        Logger logger = LogManager.GetLogger("FabrikamLogger");
 
         public HomeController(
                               IServiceTicketRepository serviceTickets,
@@ -35,20 +38,7 @@
             };
 
 
-            try
-            {
-                var client = new System.Net.Http.HttpClient();
-                var response = await client.GetAsync("http://www2.bing.com");
-
-                if (!response.IsSuccessStatusCode)
-                {
-                    // handle the second type of error (404, 400, etc.)
-                }
-            }
-            catch (HttpRequestException ex)
-            {
-                // handle the first type of error (no connectivity, etc)
-            }
+            logger.Trace("Home page oppened");
             return View(viewModel);
         }
     }
